@@ -144,3 +144,44 @@ var BarsChart = (function() {
 	}
 
 })();
+
+// var myLineChart = new Chart(ctx, {
+//     type: 'line',
+//     data: [5, 10, 7, 2, 9],,
+//     options: options
+// });
+
+var myLineChart= (function() {
+
+	//
+	// Variables
+	//
+
+	var $chart = $('#area');
+
+	// Init chart
+	function initChart($chart) {
+
+		// Create chart
+		var ordersChart = new Chart($chart, {
+			type: 'line',
+			data: {
+				labels: ['Mark', 'Smith', 'Mahesh', 'Jack','Ganesh'],
+				datasets: [{
+					data: [5, 10, 7, 2, 9],
+					backgroundColor: '#FFA8A0'
+				}
+				]
+			}
+		});
+		// Save to jQuery object
+		$chart.data('chart', ordersChart);
+	}
+
+
+	// Init chart
+	if ($chart.length) {
+		initChart($chart);
+	}
+
+})();
