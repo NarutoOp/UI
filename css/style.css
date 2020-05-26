@@ -32,7 +32,10 @@
 
 .pagination a:hover:not(.active) {background-color: #ddd;}
 
+/*3 dots*/
 .test:after {
   content: '\2807';
   color: #2e2e2e
 }
+
+
