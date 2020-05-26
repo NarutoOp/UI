@@ -145,38 +145,64 @@ var BarsChart = (function() {
 
 })();
 
+//Area or line chart
 
-var myLineChart= (function() {
+var LineaChart = (function() {
 
-	//
-	// Variables
-	//
+  // Variables
 
-	var $chartline = $('#area');
+  var $chart = $('#area');
+  // Methods
 
-	// Init chart
-	function onitChart($chartline) {
+  function init($chart) {
 
-		// Create chart
-		var ordersline = new Chart($chartline, {
-			type: 'line',
-			data: {
-				labels: ['Sep', 'Oct', 'Nov', 'Dec','Jan','Feb'],
-				datasets: [{
-					data: [5, 10, 7, 6, 9,7],
-					backgroundColor: '#FFA8A0'
-				}
-				]
-			}
-		});
-		// Save to jQuery object
-		$chartline.data('chart', ordersline);
-	}
+    var lineChart = new Chart($chart, {
+      type: 'line',
+      options: {
+        scales: {
+          yAxes: [{
+            gridLines: {
+              lineWidth: 1,
+              zeroLineColor: '#212529'
+            },
+            ticks: {
+            	display:true,
+            	padding: 10,
+              callback: function(value,index) {
+	            if(index%2==0){
+	                if (!(value % 50)) {
+	                  return value+50;
+	                }
+	            }
+	            else{
+	            	return '';
+	            }
+              }
+            }
+          }]
+        }
+      },
+      data: {
+        labels: ['Sep', 'Oct', 'Nov', 'Dec','Jan','Feb','March','Apr','May'],
+        datasets: [{
+          label: 'Performance',
+          data: [350, 450, 300, 350, 200, 450, 350, 300, 400],
+
+        }]
+      }
+    });
+
+    // Save to jQuery object
+
+    $chart.data('chart', lineChart);
+
+  };
 
 
-	// Init chart
-	if ($chartline.length) {
-		onitChart($chartline);
-	}
+  // Events
+
+  if ($chart.length) {
+    init($chart);
+  }
 
 })();
