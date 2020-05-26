@@ -3,20 +3,36 @@
 	color: #B4B4BD;
 }
 
+.chart
+{
+    position: relative;
 
-/* Rectangle 11 */
-.rectangle {
-/* Rectangle 14 */
+    height: 279px;
+    width : 416px;
+}
 
-position: absolute;
-width: 102.69px;
-height: 16px;
-left: 1161px;
-top: 348px;
+.input-group {
+	height:44px;
+	width:392px;
+}
 
-background: #8FDCE5;
-/* Greyscale 0 */
-border: 4px solid #FFFFFF;
-border-radius: 8px;
 
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+.test:after {
+  content: '\2807';
+  color: #2e2e2e
 }
