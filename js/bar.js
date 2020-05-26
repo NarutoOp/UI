@@ -145,11 +145,6 @@ var BarsChart = (function() {
 
 })();
 
-// var myLineChart = new Chart(ctx, {
-//     type: 'line',
-//     data: [5, 10, 7, 2, 9],,
-//     options: options
-// });
 
 var myLineChart= (function() {
 
@@ -157,31 +152,31 @@ var myLineChart= (function() {
 	// Variables
 	//
 
-	var $chart = $('#area');
+	var $chartline = $('#area');
 
 	// Init chart
-	function initChart($chart) {
+	function onitChart($chartline) {
 
 		// Create chart
-		var ordersChart = new Chart($chart, {
+		var ordersline = new Chart($chartline, {
 			type: 'line',
 			data: {
-				labels: ['Mark', 'Smith', 'Mahesh', 'Jack','Ganesh'],
+				labels: ['Sep', 'Oct', 'Nov', 'Dec','Jan','Feb'],
 				datasets: [{
-					data: [5, 10, 7, 2, 9],
+					data: [5, 10, 7, 6, 9,7],
 					backgroundColor: '#FFA8A0'
 				}
 				]
 			}
 		});
 		// Save to jQuery object
-		$chart.data('chart', ordersChart);
+		$chartline.data('chart', ordersline);
 	}
 
 
 	// Init chart
-	if ($chart.length) {
-		initChart($chart);
+	if ($chartline.length) {
+		onitChart($chartline);
 	}
 
 })();

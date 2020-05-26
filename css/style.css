@@ -11,6 +11,14 @@
     width : 416px;
 }
 
+.line
+{
+    position: relative;
+
+    height: 279px;
+    width : 650px;
+}
+
 .input-group {
 	height:44px;
 	width:392px;
