@@ -146,12 +146,21 @@ var BarsChart = (function() {
 })();
 
 //Area or line chart
-var style = getComputedStyle(document.body);
-var primCol = style.getPropertyValue('--primary');
 
 var LineChart = (function() {
 
   // Variables
+  var canvas = document.getElementById('area'); 
+  
+            var ctx = canvas.getContext('2d'); 
+  
+            var lingrad = ctx.createLinearGradient(0, 0, 0, 150); 
+  
+            lingrad.addColorStop(0, 'rgba(143, 220, 229, 0.5)'); 
+            lingrad.addColorStop(0.3, 'rgba(143, 220, 229, 0.5)'); 
+            lingrad.addColorStop(1,'rgba(255, 255, 255, 0)'); 
+  
+            // ctx.fillStyle = lingrad; 
 
   var $chartline = $('#area');
   // Methods
@@ -196,7 +205,7 @@ var LineChart = (function() {
           data: [350, 450, 300, 350, 200, 450, 350, 300, 400],
           borderWidth:1.5,
           borderColor: "rgba(143, 220, 229, 0.5)",
-          backgroundColor : primCol,
+          backgroundColor : lingrad,
 
         }]
       }
@@ -218,14 +227,14 @@ var LineChart = (function() {
 })();
 
 
-var canvas = document.getElementById('area'); 
+// var canvas = document.getElementById('area'); 
   
-            var ctx = canvas.getContext('2d'); 
+//             var ctx = canvas.getContext('2d'); 
   
-            var lingrad = ctx.createLinearGradient(0, 0, 0, 150); 
+//             var lingrad = ctx.createLinearGradient(0, 0, 0, 150); 
   
-            lingrad.addColorStop(0, 'rgba(143, 220, 229, 0.5)'); 
-            lingrad.addColorStop(0.3, 'rgba(143, 220, 229, 0.5)'); 
-            lingrad.addColorStop(1,'rgba(255, 255, 255, 0)'); 
+//             lingrad.addColorStop(0, 'rgba(143, 220, 229, 0.5)'); 
+//             lingrad.addColorStop(0.3, 'rgba(143, 220, 229, 0.5)'); 
+//             lingrad.addColorStop(1,'rgba(255, 255, 255, 0)'); 
   
-            ctx.fillStyle = lingrad; 
+//             ctx.fillStyle = lingrad; 
