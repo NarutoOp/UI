@@ -146,17 +146,22 @@ var BarsChart = (function() {
 })();
 
 //Area or line chart
+var style = getComputedStyle(document.body);
+var primCol = style.getPropertyValue('--primary');
 
-var LineaChart = (function() {
+var LineChart = (function() {
 
   // Variables
 
-  var $chart = $('#area');
+  var $chartline = $('#area');
   // Methods
+  // var gradientStroke = $chartline.createLinearGradient(500, 0, 100, 0);
+	// gradientStroke.addColorStop(0, '#80b6f4');
+	// gradientStroke.addColorStop(1, '#f49080');
 
   function init($chart) {
 
-    var lineChart = new Chart($chart, {
+    var lineChart = new Chart($chartline, {
       type: 'line',
       options: {
         scales: {
@@ -182,11 +187,16 @@ var LineaChart = (function() {
           }]
         }
       },
+
+      
       data: {
         labels: ['Sep', 'Oct', 'Nov', 'Dec','Jan','Feb','March','Apr','May'],
         datasets: [{
           label: 'Performance',
           data: [350, 450, 300, 350, 200, 450, 350, 300, 400],
+          borderWidth:1.5,
+          borderColor: "rgba(143, 220, 229, 0.5)",
+          backgroundColor : primCol,
 
         }]
       }
@@ -194,15 +204,28 @@ var LineaChart = (function() {
 
     // Save to jQuery object
 
-    $chart.data('chart', lineChart);
+    $chartline.data('chart', lineChart);
 
   };
 
 
   // Events
 
-  if ($chart.length) {
-    init($chart);
+  if ($chartline.length) {
+    init($chartline);
   }
 
 })();
+
+
+var canvas = document.getElementById('area'); 
+  
+            var ctx = canvas.getContext('2d'); 
+  
+            var lingrad = ctx.createLinearGradient(0, 0, 0, 150); 
+  
+            lingrad.addColorStop(0, 'rgba(143, 220, 229, 0.5)'); 
+            lingrad.addColorStop(0.3, 'rgba(143, 220, 229, 0.5)'); 
+            lingrad.addColorStop(1,'rgba(255, 255, 255, 0)'); 
+  
+            ctx.fillStyle = lingrad; 

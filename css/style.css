@@ -1,6 +1,6 @@
 .title {
 	font-weight: 600;
-	color: #B4B4BD;
+	color: #;
 }
 
 .chart
@@ -46,4 +46,10 @@
   color: #2e2e2e
 }
 
+:root {
+
+  --primary : linear-gradient(180deg, rgba(10, 207, 131, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  /*--primary : ;*/
+
+}
 
