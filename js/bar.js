@@ -160,13 +160,9 @@ var LineChart = (function() {
             lingrad.addColorStop(0.3, 'rgba(143, 220, 229, 0.5)'); 
             lingrad.addColorStop(1,'rgba(255, 255, 255, 0)'); 
   
-            // ctx.fillStyle = lingrad; 
+
 
   var $chartline = $('#area');
-  // Methods
-  // var gradientStroke = $chartline.createLinearGradient(500, 0, 100, 0);
-	// gradientStroke.addColorStop(0, '#80b6f4');
-	// gradientStroke.addColorStop(1, '#f49080');
 
   function init($chart) {
 
@@ -226,15 +222,3 @@ var LineChart = (function() {
 
 })();
 
-
-// var canvas = document.getElementById('area'); 
-  
-//             var ctx = canvas.getContext('2d'); 
-  
-//             var lingrad = ctx.createLinearGradient(0, 0, 0, 150); 
-  
-//             lingrad.addColorStop(0, 'rgba(143, 220, 229, 0.5)'); 
-//             lingrad.addColorStop(0.3, 'rgba(143, 220, 229, 0.5)'); 
-//             lingrad.addColorStop(1,'rgba(255, 255, 255, 0)'); 
-  
-//             ctx.fillStyle = lingrad; 
